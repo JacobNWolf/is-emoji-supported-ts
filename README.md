@@ -157,6 +157,4 @@ This project is a fork of the original [koala-interactive/is-emoji-supported](ht
 
 ## License
 
-Copyright (c) 2023 [Koala-Interactive](https://koala-interactive.com/)
-
-This project is [MIT](link-to-your-license-file) licensed.
+This project is [MIT](./LICENSE) licensed.
