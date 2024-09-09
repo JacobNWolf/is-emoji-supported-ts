@@ -1,35 +1,53 @@
-![Logo](https://koala-interactive.com/logo.e927957b.svg)
+# 🦄 @jacobwolf/is-emoji-supported
 
-# 🦄 is-emoji-supported
+![npm](https://img.shields.io/npm/v/@jacobwolf/is-emoji-supported)
+![npm](https://img.shields.io/npm/dm/@jacobwolf/is-emoji-supported)
 
 ![No dependency](https://img.shields.io/badge/dependencies-none-blue.svg)
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-![lint](https://github.com/koala-interactive/is-emoji-supported/workflows/lint/badge.svg?branch=master)
-![e2e](https://github.com/koala-interactive/is-emoji-supported/workflows/e2e/badge.svg?branch=master)
 
-## Description
+A lightweight library to detect emoji support in browsers and provide fallbacks.
 
-**is-emoji-supported** is a library allowing you to detect if the running device supports the specified emoji and helps you providing a solution if it does not support it.
+> This is a maintained fork of the original [koala-interactive/is-emoji-supported](https://github.com/koala-interactive/is-emoji-supported) package. It fixes the original package's source map issues and adds improvements in emoji detection and fallback handling.
 
-## 📖 Table of content
+## Features
 
-- [Installation](#🚀-installation)
-- [How to use](#🖥️-how-to-use)
-- [How to test](#⏳-how-to-test)
-- [How to contribute](#🤝-how-to-contribute)
-- [List of our other package](#📦-list-of-our-other-package)
-- [Join us](#⛵-join-us)
-- [License](#license)
+- Detect emoji support across different browsers and devices
+- Provide fallback options for unsupported emojis
+- Lightweight with zero dependencies
+- Customizable caching for improved performance
+
+## 📖 Table of Contents
+
+- [🦄 @jacobwolf/is-emoji-supported](#-jacobwolfis-emoji-supported)
+  - [Features](#features)
+  - [📖 Table of Contents](#-table-of-contents)
+  - [🚀 Installation](#-installation)
+  - [🖥️ How to use](#️-how-to-use)
+    - [Basic usage](#basic-usage)
+    - [Usage with your own cache handler](#usage-with-your-own-cache-handler)
+    - [Fallback to images](#fallback-to-images)
+  - [⏳ How to test](#-how-to-test)
+  - [🤝 How to contribute](#-how-to-contribute)
+  - [License](#license)
 
 ## 🚀 Installation
 
 Install with [yarn](https://yarnpkg.com):
 
-    $ yarn add is-emoji-supported
+    $ yarn add @jacobwolf/is-emoji-supported
 
-Or install using [npm](https://npmjs.org):
+Install using [npm](https://npmjs.org):
 
-    $ npm i is-emoji-supported
+    $ npm install @jacobwolf/is-emoji-supported
+
+Install using [pnpm](https://pnpm.io):
+
+    $ pnpm add @jacobwolf/is-emoji-supported
+
+Install using [bun](https://bun.sh):
+
+    $ bun add @jacobwolf/is-emoji-supported
 
 ## 🖥️ How to use
 
@@ -38,7 +56,7 @@ Or install using [npm](https://npmjs.org):
 The most basic usage is to use the function directly to detect is the current device support the emoji.
 
 ```ts
-import { isEmojiSupported } from "is-emoji-supported";
+import { isEmojiSupported } from "@jacobwolf/is-emoji-supported";
 
 if (isEmojiSupported("🦄")) {
   alert("Houra 🦄 is supported");
@@ -54,7 +72,7 @@ For some reasons you may want to use your own cache implementation to store the 
 You only need to match the [`Map`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Map) interface.
 
 ```ts
-import { setCacheHandler } from "is-emoji-supported";
+import { setCacheHandler } from "@jacobwolf/is-emoji-supported";
 
 const key = "emoji-cache";
 const cache = JSON.parse(localStorage.getItem(key) || {});
@@ -76,7 +94,7 @@ You can build your own or use the one given by [JoyPixel](https://www.joypixels.
 
 ```jsx
 import React from 'react';
-import {isEmojiSupported} from 'is-emoji-supported';
+import {isEmojiSupported} from '@jacobwolf/is-emoji-supported';
 
 const emojiMap = {
   '🦄': {
@@ -105,32 +123,37 @@ export const Emoji = ({ unicode }) => {
 
 ## 🤝 How to contribute
 
-- fork the project
-- (write how to to launch it)
-- create a branch from main/master like that
+This project is a fork of the original [koala-interactive/is-emoji-supported](https://github.com/koala-interactive/is-emoji-supported) package.
 
-      $ contribution/fix/your-github-identity
+- Fork the project on GitHub
+- Clone your forked repository:
+
+      $ git clone https://github.com/your-username/is-emoji-supported.git
+      $ cd is-emoji-supported
+
+- Install dependencies:
+
+      $ npm install
+
+- Create a new branch from main:
+
+      $ git checkout -b contribution/fix/your-github-username
 
   OR
 
-      $ contribution/improvment/your-github-identity
+      $ git checkout -b contribution/improvement/your-github-username
 
-- push several (if needed) clear commits
-- add tests following the way of the other ones have been wrote
-- make sure that all test runs
-- push your code
+- Make your changes and commit them with clear, descriptive messages
+- Add or update tests as necessary
+- Ensure all tests pass:
 
-## 📦 List of our other package
+      $ npm test
 
-- [frenchkiss](https://www.npmjs.com/package/frenchkiss)
-- [wowza-webrtc-player](https://www.npmjs.com/package/wowza-webrtc-player)
-- [react-rich-mentions](https://www.npmjs.com/package/react-rich-mentions)
-- [react-anchor-navigation](https://www.npmjs.com/package/react-anchor-navigation)
+- Push your changes to your fork:
 
-## ⛵ Join us
+      $ git push origin your-branch-name
 
-May you want to share more than a pull request
-check our [jobs opportunity](https://www.linkedin.com/company/koala-interactive/jobs/)
+- Open a pull request on the original repository
 
 ## License
 
