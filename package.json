@@ -20,10 +20,11 @@
   },
   "author": "Jacob Wolf <jacob.wolf@beehiiv.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/koala-interactive/is-emoji-supported/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JacobNWolf/is-emoji-supported-ts"
   },
-  "repository": "github:koala-interactive/is-emoji-supported",
+  "homepage": "https://github.com/JacobNWolf/is-emoji-supported-ts",
   "keywords": [
     "is-emoji-supported",
     "support",
