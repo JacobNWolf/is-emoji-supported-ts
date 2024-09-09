@@ -1,5 +1,5 @@
 import typescript from '@rollup/plugin-typescript';
-import {terser} from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 
 const {name} = require('./package.json');
 const globals = {};
@@ -40,7 +40,14 @@ const cjs = [
 const esm = [
   {
     input: 'src/is-emoji-supported.ts',
-    output: {file: `dist/esm/${name}.js`, sourcemap: true, format: 'esm'},
+    output: {
+      file: `dist/esm/${name}.js`,
+      sourcemap: true,
+      format: 'esm',
+      sourcemapPathTransform: (relativeSourcePath) => {
+        return relativeSourcePath.replace('../../src', './src');
+      }
+    },
     external,
     plugins: [typescript()]
   }
@@ -80,5 +87,4 @@ const umd = [
     ]
   }
 ];
-
 module.exports = [...cjs, ...esm, ...umd];
